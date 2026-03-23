@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import logo from "./assets/logo.png";
+import PixelFlowBackground from "./PixelFlowBackground";
 
 export default function MinimalistControlsPortfolio() {
   const projects = [
@@ -52,7 +53,7 @@ export default function MinimalistControlsPortfolio() {
           min-height: 100vh;
           background: #09090b;
         }
-
+      
         [data-reveal] {
           opacity: 0;
           transform: translateY(24px);
@@ -93,8 +94,9 @@ export default function MinimalistControlsPortfolio() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100 font-mono selection:bg-zinc-200 selection:text-zinc-900">
-      <div className="fixed inset-0 pointer-events-none opacity-[0.06]" aria-hidden>
+    <div className="min-h-screen bg-zinc-950 text-zinc-50 font-mono selection:bg-zinc-200 selection:text-zinc-900">
+      <PixelFlowBackground />
+      <div className="fixed inset-0 pointer-events-none opacity-[0.025]" aria-hidden>
         <div
           className="h-full w-full"
           style={{
