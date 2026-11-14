@@ -1,1 +1,151 @@
-@import "tailwindcss";
+:root {
+  font-family: system-ui, sans-serif;
+  color: #242420;
+  background: #faf9f6;
+  line-height: 1.6;
+  font-synthesis: none;
+  --muted: #62615b;
+  --rule: #dddbd3;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body, h1, h2, h3, p {
+  margin: 0;
+}
+
+.site {
+  width: min(100% - 3rem, 37rem);
+  margin-inline: auto;
+  min-height: 100vh;
+  min-height: 100svh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.intro {
+  display: grid;
+  align-content: center;
+  gap: 0.45rem;
+  padding-block: 2rem 12vh;
+}
+
+h1 {
+  font-size: clamp(1.35rem, 5.6vw, 2.15rem);
+  font-weight: 600;
+  letter-spacing: -0.045em;
+  line-height: 1.25;
+}
+
+.intro p {
+  color: var(--muted);
+}
+
+.content {
+  padding-block: clamp(2.5rem, 8vh, 5rem) 4rem;
+}
+
+.content h1 {
+  margin-bottom: 1.4rem;
+}
+
+.view {
+  animation: enter 200ms ease-out both;
+}
+
+@keyframes enter {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .view {
+    animation: none;
+  }
+}
+
+.cv-preview {
+  display: block;
+  width: 100%;
+  height: clamp(20rem, 70vh, 52rem);
+  margin-block: 1rem 2rem;
+  border: 1px solid var(--rule);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem 1.35rem;
+  border-top: 1px solid var(--rule);
+  padding-block: 1rem;
+  font-size: 0.9rem;
+}
+
+a {
+  color: inherit;
+  text-decoration-color: var(--muted);
+  text-underline-offset: 0.23em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 4px;
+}
+
+.site-nav {
+  border-top: 0;
+  border-bottom: 1px solid var(--rule);
+}
+
+.site-nav a {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.3em;
+}
+
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.entries li {
+  border-top: 1px solid var(--rule);
+  padding-block: 1rem;
+}
+
+.entries h2 {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.note {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.entries p:last-child {
+  margin-top: 0.35rem;
+  font-size: 0.95rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #eae8e1;
+    background: #191917;
+    --muted: #aaa89f;
+    --rule: #3b3a34;
+  }
+}
